@@ -1,5 +1,12 @@
+type Client {
+    name:String,
+    email:String
+}
+
 type Query {
     hello:String
 
     soma(a:Int, b:Int): Int
+
+    client:Client
 }
