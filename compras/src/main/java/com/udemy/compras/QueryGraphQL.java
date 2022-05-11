@@ -7,6 +7,10 @@ import org.springframework.stereotype.Component;
 public class QueryGraphQL implements GraphQLQueryResolver {
 
     // Site para visualizar e testar: http://localhost:8080/graphiql
+
+    // Site para testar o graphql: https://www.graphqlbin.com/v2/6RQ6TM
+
+    //Liberando o playground: http://localhost:8080/playground
     public String hello() {
         return "Hello GraphQL";
     }
