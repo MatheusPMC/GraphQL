@@ -1,4 +1,4 @@
-package com.udemy.compras.graphql;
+package com.udemy.compras.graphql.cliente;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
