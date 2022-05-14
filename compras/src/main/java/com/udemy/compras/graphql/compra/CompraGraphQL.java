@@ -8,6 +8,8 @@ import com.udemy.compras.graphql.cliente.ClienteService;
 import com.udemy.compras.graphql.produto.ProdutoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -69,8 +71,9 @@ mutation {
         return compraService.findById(id);
     }
 
-    public List<Compra> getCompras() {
-        return compraService.findAll();
+    public List<Compra> getCompras(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return compraService.findAll(pageable);
     }
 
     public Compra saveCompra(CompraInput input) {
