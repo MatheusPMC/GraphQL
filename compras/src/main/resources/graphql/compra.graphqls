@@ -1,27 +1,27 @@
 type Compra {
-    id:ID!,
-    quantidade:Int!
-    status:String!
+    id: ID!
+    quantidade: Int!,
+    status: String!,
     data: Date!
-    cliente:Cliente
-    produto:Produto!
+    cliente: Cliente,
+    produto: Produto!
 }
 
 input CompraInput {
-    id:ID,
-    quantidade:Int!
-    status:String!
-    clienteId:ID!
-    produtoId:ID!
+    id: ID
+    quantidade: Int!,
+    status: String!,
+    clienteId: ID!,
+    produtoId: ID!
 }
 
 extend type Query {
     compra(id:ID!):Compra
-
-    compras(page:Int = 0, size:Int = 20):[Compra]!
+    compras(page:Int = 0, size:Int = 10):[Compra]!
 }
 
 extend type Mutation {
     saveCompra(compra:CompraInput!):Compra!
+
     deleteCompra(id:ID!):Boolean!
 }
